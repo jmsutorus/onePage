@@ -10,7 +10,7 @@ This will create a local host of the project
 
 Tips on branching
 Creating your branch:
-$ git branch -b <name of your branch>
+$ git checkout -b <name of your branch>
   
 Checkout your branch:
 $ git checkout <name of your branch>
