@@ -6,7 +6,7 @@ class App extends Component {
     return (
       <div class="grid-container">
         <div class="header">
-          <h2>Header</h2>
+        <h1><img src="/img/logo.png" /> The OnePage</h1> 
         </div>
         <div class="left">Column</div>
         <div class="middle">Column</div>

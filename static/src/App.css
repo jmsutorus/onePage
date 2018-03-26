@@ -11,6 +11,16 @@ body {
   font-size: 35px;
 }
 
+.header img {
+  width: 150px;
+  height: 150px;
+  vertical-align: middle;
+}
+
+.header h1 {
+  position: relative;
+}
+
 /* The grid container */
 .grid-container {
   display: grid;
@@ -25,7 +35,6 @@ body {
 .middle,
 .right {
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
 }
 
 /* Style the left column */
@@ -53,6 +62,7 @@ body {
   padding: 10px;
   text-align: center;
 }
+
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
   .grid-container  {
