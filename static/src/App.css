@@ -41,6 +41,26 @@ body {
 .left {
   grid-area: left;
   background-color: #aaa;
+  width: 700px;
+}
+
+.left button{
+  float: right;
+}
+
+.left img{
+  width:150px;
+  height:150px;
+}
+
+.circleLinks img{
+  width:150px;
+  height:150px;
+}
+
+editLinks {
+  width:300px;
+  height:300px;
 }
 
 /* Style the middle column */
