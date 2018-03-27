@@ -26,14 +26,78 @@ class App extends Component {
               trigger={<Button bsStyle="primary">Edit</Button>}
               modal
               closeOnDocumentClick>
-              <div><img src="/img/filler.svg" /></div>
-              <div><img src="/img/filler.svg" /></div>
-              <div><img src="/img/filler.svg" /></div>
-              <div><img src="/img/filler.svg" /></div>
-              <div><img src="/img/filler.svg" /></div>
-              <div><img src="/img/filler.svg" /></div>
-              <div><img src="/img/filler.svg" /></div>
-              <div><img src="/img/filler.svg" /></div>
+              <div>
+                <form>
+                    <input type="text" value="current link" name="link1" />
+                    <input type="submit" value="update link" name="buttonLink1"/>
+                    <input type="text" value="" name="image1" />
+                    <input type="submit" value="upload image" name="buttonImage1"/>
+                  <img src="/img/filler.svg" />
+                </form>
+              </div>
+              <div>
+                <form>
+                    <input type="text" value="current link" name="link1" />
+                    <input type="submit" value="update link" name="buttonLink1"/>
+                    <input type="text" value="" name="image1" />
+                    <input type="submit" value="upload image" name="buttonImage1"/>
+                  <img src="/img/filler.svg" />
+                </form>
+              </div>
+              <div>
+                <form>
+                    <input type="text" value="current link" name="link1" />
+                    <input type="submit" value="update link" name="buttonLink1"/>
+                    <input type="text" value="" name="image1" />
+                    <input type="submit" value="upload image" name="buttonImage1"/>
+                  <img src="/img/filler.svg" />
+                </form>
+              </div>
+              <div>
+                <form>
+                    <input type="text" value="current link" name="link1" />
+                    <input type="submit" value="update link" name="buttonLink1"/>
+                    <input type="text" value="" name="image1" />
+                    <input type="submit" value="upload image" name="buttonImage1"/>
+                  <img src="/img/filler.svg" />
+                </form>
+              </div>
+              <div>
+                <form>
+                    <input type="text" value="current link" name="link1" />
+                    <input type="submit" value="update link" name="buttonLink1"/>
+                    <input type="text" value="" name="image1" />
+                    <input type="submit" value="upload image" name="buttonImage1"/>
+                  <img src="/img/filler.svg" />
+                </form>
+              </div>
+              <div>
+                <form>
+                    <input type="text" value="current link" name="link1" />
+                    <input type="submit" value="update link" name="buttonLink1"/>
+                    <input type="text" value="" name="image1" />
+                    <input type="submit" value="upload image" name="buttonImage1"/>
+                  <img src="/img/filler.svg" />
+                </form>
+              </div>
+              <div>
+                <form>
+                    <input type="text" value="current link" name="link1" />
+                    <input type="submit" value="update link" name="buttonLink1"/>
+                    <input type="text" value="" name="image1" />
+                    <input type="submit" value="upload image" name="buttonImage1"/>
+                  <img src="/img/filler.svg" />
+                </form>
+              </div>
+              <div>
+                <form>
+                    <input type="text" value="current link" name="link1" />
+                    <input type="submit" value="update link" name="buttonLink1"/>
+                    <input type="text" value="" name="image1" />
+                    <input type="submit" value="upload image" name="buttonImage1"/>
+                  <img src="/img/filler.svg" />
+                </form>
+              </div>
             </Popup>
             <div class="circleLinks">
               <img src="/img/filler.svg" />
