@@ -8,7 +8,18 @@ class App extends Component {
     return (
       <div class="grid-container">
         <div class="header">
-        <h1><img src="/img/logo.png" /> The OnePage</h1> 
+          <h1><img src="/img/logo.png" /> The OnePage</h1>
+          <div className="social-button-container">
+            <button className="social-button social-button-facebook">
+              Facebook
+            </button>
+            <button className="social-button social-button-twitter">
+              Twitter
+            </button>
+            <button className="social-button social-button-instagram">
+              Instagram
+            </button>
+          </div>
         </div>
         <div class="left">
             <Popup
@@ -38,11 +49,11 @@ class App extends Component {
             </div>
         </div>
         <div class="middle">
-      
+
         </div>
         <div class="right">
-        
-        
+
+
         </div>
         <div class="footer">
           <p>Footer</p>
