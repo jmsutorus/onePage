@@ -13,7 +13,7 @@ body {
 
 .header img {
   width: 150px;
-  height: 150px;
+  height: 130px;
   vertical-align: middle;
 }
 
@@ -108,24 +108,20 @@ body {
 /* The grid container */
 .grid-container {
   display: grid;
-  grid-template-areas:
-  'header header header header header header'
-  'left left middle middle right right'
-  'footer footer footer footer footer footer';
+  grid-template-rows: 74vh;
+	grid-template-columns: 1fr 1fr 1fr;
   /* grid-column-gap: 10px; - if you want gap between the columns */
 }
 
 .left,
 .middle,
 .right {
-  padding: 10px;
 }
 
 /* Style the left column */
 .left {
-  grid-area: left;
-  background-color: #aaa;
-  width: 700px;
+  background-color: #f7f7f7;
+  overflow: scroll;
 }
 
 .left button{
@@ -149,19 +145,37 @@ editLinks {
 
 /* Style the middle column */
 .middle {
-  grid-area: middle;
-  background-color: #bbb;
+  background-color: #f7f7f7;
+  overflow: scroll;
 }
 
 /* Style the right column */
 .right {
-  grid-area: right;
-  background-color: #ccc;
+  background-color: #f7f7f7;
+  overflow: scroll;
 }
+
+#scroll::-webkit-scrollbar{
+  width:10px;
+  background-color: none;
+}
+#scroll::-webkit-scrollbar-button {
+  display: none;
+}
+#scroll::-webkit-scrollbar-thumb {
+  display: none;
+}
+div#scroll:hover::-webkit-scrollbar-thumb {
+  display: contents;
+  background-color: #818B99;
+  border: 3px solid transparent;
+  border-radius: 9px;
+  background-clip: content-box;
+}
+
 
 /* Style the footer */
 .footer {
-  grid-area: footer;
   background-color: #f1f1f1;
   padding: 10px;
   text-align: center;
