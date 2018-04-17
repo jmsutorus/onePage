@@ -25,16 +25,16 @@ class App extends Component {
       <div class="grid-container">
         <div class="left" id="scroll">
             <div class="circleLinks1">
-              <img src="/img/fb_logo.png"/>
-              <img src="/img/linkedin_logo.png"/>
-              <img src="/img/twitter_logo.png"/>
-              <img src="/img/pinterest_logo.png"/>
+              <a href="https://www.facebook.com" target="_blank"><img src="/img/fb_logo.png"/></a>
+              <a href="https://www.linkedin.com" target="_blank"><img src="/img/linkedin_logo.png"/></a>
+              <a href="https://www.twitter.com" target="_blank"><img src="/img/twitter_logo.png"/></a>
+              <a href="https://www.pinterest.com" target="_blank"><img src="/img/pinterest_logo.png"/></a>
             </div>
             <div class="circleLinks2">
-              <img src="/img/reddit_logo.png"/>
-              <img src="/img/twitch_logo.png"/>
-              <img src="/img/youtube_logo.png"/>
-              <img src="/img/ig_logo.png"/>
+              <a href="https://www.reddit.com" target="_blank"><img src="/img/reddit_logo.png"/></a>
+              <a href="https://www.twitch.tv/" target="_blank"><img src="/img/twitch_logo.png"/></a>
+              <a href="https://www.youtube.com" target="_blank"><img src="/img/youtube_logo.png"/></a>
+              <a href="https://www.instagram.com" target="_blank"><img src="/img/ig_logo.png"/></a>
             </div>
         </div>
         <div class="middle" id="scroll">
