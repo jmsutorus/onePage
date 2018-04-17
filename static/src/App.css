@@ -1,6 +1,6 @@
 body {
-  font-family: Open Sans, Arial, Helvetica, sans-serif;
-  background-color: #500000;
+  font-family: Arial, Helvetica, sans-serif;
+  background-size: 1920px 1080px;
 }
 
 /* Style the header */
@@ -18,8 +18,14 @@ body {
 }
 
 .header h1 {
+  font-family: Arial;
   position: relative;
   display: inline;
+}
+
+.logo{
+  width: 150px;
+  height: 150px;
 }
 
 /* The grid container */
@@ -39,18 +45,11 @@ body {
   overflow: scroll;
 }
 
-.circleLinks1{
-  margin-top: 2%;
-  margin-bottom: 2%;
-}
-
-.circleLinks2{}
-
 .circleLinks1 img{
   width:136px;
   height:136px;
   margin-right: 32px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
 }
 
 .circleLinks2 img{
@@ -60,7 +59,7 @@ body {
 }
 
 .searchBar{
-  margin-top: 32px;
+  margin-top: 43px;
 }
 
 input[type=text] {
