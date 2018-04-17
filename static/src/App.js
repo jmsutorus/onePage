@@ -23,95 +23,18 @@ class App extends Component {
         </div>
       </div>
       <div class="grid-container">
-        <div class="left">
-            <Popup
-              trigger={<Button bsStyle="primary">Edit</Button>}
-              modal
-              closeOnDocumentClick>
-              <div>
-                <form>
-                    <input type="text" value="current link" name="link1" />
-                    <input type="submit" value="update link" name="buttonLink1"/>
-                    <input type="text" value="" name="image1" />
-                    <input type="submit" value="upload image" name="buttonImage1"/>
-                  <img src="/img/filler.svg" />
-                </form>
-              </div>
-              <div>
-                <form>
-                    <input type="text" value="current link" name="link1" />
-                    <input type="submit" value="update link" name="buttonLink1"/>
-                    <input type="text" value="" name="image1" />
-                    <input type="submit" value="upload image" name="buttonImage1"/>
-                  <img src="/img/filler.svg" />
-                </form>
-              </div>
-              <div>
-                <form>
-                    <input type="text" value="current link" name="link1" />
-                    <input type="submit" value="update link" name="buttonLink1"/>
-                    <input type="text" value="" name="image1" />
-                    <input type="submit" value="upload image" name="buttonImage1"/>
-                  <img src="/img/filler.svg" />
-                </form>
-              </div>
-              <div>
-                <form>
-                    <input type="text" value="current link" name="link1" />
-                    <input type="submit" value="update link" name="buttonLink1"/>
-                    <input type="text" value="" name="image1" />
-                    <input type="submit" value="upload image" name="buttonImage1"/>
-                  <img src="/img/filler.svg" />
-                </form>
-              </div>
-              <div>
-                <form>
-                    <input type="text" value="current link" name="link1" />
-                    <input type="submit" value="update link" name="buttonLink1"/>
-                    <input type="text" value="" name="image1" />
-                    <input type="submit" value="upload image" name="buttonImage1"/>
-                  <img src="/img/filler.svg" />
-                </form>
-              </div>
-              <div>
-                <form>
-                    <input type="text" value="current link" name="link1" />
-                    <input type="submit" value="update link" name="buttonLink1"/>
-                    <input type="text" value="" name="image1" />
-                    <input type="submit" value="upload image" name="buttonImage1"/>
-                  <img src="/img/filler.svg" />
-                </form>
-              </div>
-              <div>
-                <form>
-                    <input type="text" value="current link" name="link1" />
-                    <input type="submit" value="update link" name="buttonLink1"/>
-                    <input type="text" value="" name="image1" />
-                    <input type="submit" value="upload image" name="buttonImage1"/>
-                  <img src="/img/filler.svg" />
-                </form>
-              </div>
-              <div>
-                <form>
-                    <input type="text" value="current link" name="link1" />
-                    <input type="submit" value="update link" name="buttonLink1"/>
-                    <input type="text" value="" name="image1" />
-                    <input type="submit" value="upload image" name="buttonImage1"/>
-                  <img src="/img/filler.svg" />
-                </form>
-              </div>
-            </Popup>
-            <div class="circleLinks">
-              <img src="/img/filler.svg" />
-              <img src="/img/filler.svg" />
-              <img src="/img/filler.svg" />
-              <img src="/img/filler.svg" />
+        <div class="left" id="scroll">
+            <div class="circleLinks1">
+              <img src="/img/fb_logo.png"/>
+              <img src="/img/linkedin_logo.png"/>
+              <img src="/img/twitter_logo.png"/>
+              <img src="/img/pinterest_logo.png"/>
             </div>
-            <div class="circleLinks">
-              <img src="/img/filler.svg" />
-              <img src="/img/filler.svg" />
-              <img src="/img/filler.svg" />
-              <img src="/img/filler.svg" />
+            <div class="circleLinks2">
+              <img src="/img/reddit_logo.png"/>
+              <img src="/img/twitch_logo.png"/>
+              <img src="/img/youtube_logo.png"/>
+              <img src="/img/ig_logo.png"/>
             </div>
         </div>
         <div class="middle" id="scroll">
