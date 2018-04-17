@@ -7,9 +7,11 @@ import './App.css';
 class App extends Component {
   render() {
     return (
+      <body background="img/kyle_field_b.png">
       <div>
       <div class="header">
-        <h1><img src="/img/logo.png" /> The OnePage</h1>
+        <img src="/img/logo.png" className="logo"/>
+        <img src="/img/theOnePage.png" />
         <div className="social-button-container">
           <button className="social-button social-button-facebook">
             Facebook
@@ -55,6 +57,7 @@ class App extends Component {
         </div>
       </div>
     </div>
+    </body>
     );
   }
 }
