@@ -19,16 +19,16 @@ class App extends Component {
 
 	render() {
 		return (
+			/*
 			<div>
+				<p>Current time:</p>
+				<Clock
+					value={this.state.date}
+				/>
+			</div>
+			*/
 
-				<div>
-					<p>Current time:</p>
-					<Clock
-						value={this.state.date}
-					/>
-				</div>
-
-
+			<div>
 				<div class="header">
 					<img src="/img/logo.png" />
 					<h1>The OnePage</h1>

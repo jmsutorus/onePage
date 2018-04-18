@@ -4,7 +4,10 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "merge-class-names": "^1.1.1",
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
+    "react-clock": "^2.2.1",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1",
     "react-social-login": "^3.4.2",
