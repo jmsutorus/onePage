@@ -9,8 +9,8 @@ class App extends Component {
 		return (
 			<div>
 				<div class="header">
-					<img src="/img/logo.png" />
-					<h1>The OnePage</h1>
+					<img src="/img/logo.png" className="logo"/>
+					<img src="/img/theOnePage.png" />
 					
 					<iframe src="http://free.timeanddate.com/clock/i6785m90/n2284/th2" frameborder="0" width="114" height="18"></iframe>
 					
