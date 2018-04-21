@@ -10,6 +10,8 @@ body {
   padding: 30px;
   text-align: center;
   font-size: 35px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .header img {
@@ -23,17 +25,24 @@ body {
 }
 
 .logo{
-  width: 150px;
-  height: 150px;
+  width: 75px;
+  height: 75px;
+  margin-right:10px;
+}
+
+.textLogo{
+  height: 75px;
+  width: auto;
+  margin-right:20px;
 }
 
 /* The grid container */
 .grid-container {
-	display: grid;
-	grid-template-columns: 675px 300px 300px 300px;
+  display: grid;
+  grid-template-columns: 600px 0px 300px 5px 300px 5px 300px;
   grid-column-gap: 30px;
-  margin-left: 50px;
-  margin-right: 50px;
+  grid-row-gap: 30px;
+  margin-left: 99px;
 }
 
 .left,
@@ -47,27 +56,52 @@ body {
 }
 
 .circleLinks1 img{
-  width:136px;
-  height:136px;
+  width:118px;
+  height:118px;
   margin-right: 32px;
   margin-bottom: 32px;
+  transition: transform .2s;
+}
+
+.circleLinks1 img:hover{
+  transform: scale(1.1);
 }
 
 .circleLinks2 img{
-  width:136px;
-  height:136px;
-  margin-right: 32px;
+  width:118px;
+  height:118px;
+  margin-right:32px;
+  transition: transform .2s;
+}
+
+.circleLinks2 img:hover{
+  transform: scale(1.1);
+}
+
+.circleLinks3 img{
+  width:118px;
+  height:118px;
+  margin-top: 32px;
+  margin-right:32px;
+  transition: transform .2s;
+}
+
+.circleLinks3 img:hover{
+  transform: scale(1.1);
 }
 
 .searchBar{
-  margin-top: 43px;
+  margin-top: -95px;
 }
 
 input[type=text] {
     width: 95%;
     padding: 12px 20px;
-	margin-top: 101px;
+	margin-top: 175px;
     box-sizing: border-box;
+	background: url(google.png) no-repeat scroll 13px 13px;
+	background-color: #fff;
+	padding-left:108px;
 }
 
 editLinks {
@@ -102,7 +136,6 @@ div#scroll:hover::-webkit-scrollbar-thumb {
   border-radius: 9px;
   background-clip: content-box;
 }
-
 
 /* Style the footer */
 .footer {
