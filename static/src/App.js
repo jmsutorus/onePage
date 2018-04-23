@@ -2,11 +2,44 @@ import React, { Component } from 'react';
 import {Button} from 'reactstrap';
 import Popup from 'reactjs-popup';
 import Post from "./Post.js";
+import ReactDOM from 'react-dom';
+import LatLong from './LatLong.js';
+import DisplayTemp from './weather.js'
+import OpenWeatherAPI from './OpenWeatherAPI.js'
+import Clock from './Clock';
 import './App.css';
 
 class App extends Component {
+	constructor(props){
+		super(props);
+		this.state ={
+		  Lat:'',
+		  Long:'',
+		  Temp:'Loading'
+		}
+		this.onPass = this.onPass.bind(this)
+	  };
+	onPass(Lat,Long) {
+		var that = this;
+	OpenWeatherAPI.getTemp(Lat,Long).then(function (data) {
+		  that.setState({
+			Lat: Lat,
+			Long: Long,
+			Temp: data.main.temp,
+			Name: data.name,
+			Description: data.weather[0].description,
+			Wind: data.wind.speed,
+			Humidity: data.main.humidity
+		  });
+		},
+		function (errorMessage) {
+			alert(errorMessage);
+		});
+	  }
+
 	render() {
 		return (
+			
 			<div>
 				<div class="header">
 					{/*(<iframe src="http://free.timeanddate.com/clock/i6785m90/n2284/th2" frameborder="0" width="114" height="18"></iframe><br/> */}
@@ -24,6 +57,21 @@ class App extends Component {
 						</button>
 					</div>
 					*/}
+					
+				</div>
+
+				<div class="extra-container">
+					<div class="column">
+						<div>
+							<LatLong onPass = {this.onPass} />
+							<DisplayTemp Temp = {this.state.Temp} Name = {this.state.Name} Description = {this.state.Description}
+							 Humidity = {this.state.Humidity} Wind = {this.state.Wind}/>
+						</div>
+					</div>
+					<div class="column"></div>
+					<div class="column">
+						<Clock></Clock>
+					</div>
 				</div>
 				
 				<div class="grid-container">
@@ -63,7 +111,7 @@ class App extends Component {
 							<img src="img/fb_banner.png"/>
 						</div>
 						<div class="row">
-							<div class="fb-page" data-width="330px" data-height="500px" data-href="https://www.facebook.com/StudentProblems/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
+							<div class="fb-page" data-width="280px" data-height="500px" data-href="https://www.facebook.com/StudentProblems/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
 						</div>
 					</div>
 					
@@ -74,7 +122,7 @@ class App extends Component {
 							<img src="img/twitter_banner.png"/>
 						</div>
 						<div class="row">
-							<a class="twitter-timeline" data-width="350" data-height="500" data-theme="light" href="https://twitter.com/reveille" data-chrome="noheader nofooter noborders"></a> 
+							<a class="twitter-timeline" data-width="280" data-height="500" data-theme="light" href="https://twitter.com/reveille" data-chrome="noheader nofooter noborders"></a> 
 						</div>
 					</div>
 					
@@ -85,7 +133,7 @@ class App extends Component {
 							<img src="img/cnn_banner.png"/>
 						</div>
 						<div class="row">
-							<a class="twitter-timeline" data-width="350" data-height="500" data-theme="light" href="https://twitter.com/cnnbrk" data-chrome="noheader nofooter noborders"></a> 
+							<a class="twitter-timeline" data-width="300" data-height="500" data-theme="light" href="https://twitter.com/cnnbrk" data-chrome="noheader nofooter noborders"></a> 
 						</div>
 					</div>
 					
