@@ -5,6 +5,8 @@ import Post from "./Post.js";
 import ReactDOM from 'react-dom';
 import DisplayTemp from './weather.js'
 import Clock from './Clock';
+import LatLong from './LatLong.js';
+import OpenWeatherAPI from './OpenWeatherAPI.js'
 import './App.css';
 
 class App extends Component {
@@ -15,11 +17,17 @@ class App extends Component {
 			twitterUser: "reveille",
 			twitterUser2: "cnnbrk",
 			twitterInput: "",
-
+			Lat:'',
+		  	Long:'',
+			Temp:'Loading',
+			Description: '',
+			Humidity: '',
+			Location: 'College Station',
+			weather: '',
+			Wind: '8.3'
     };
 	
-
-	
+		this.onPass = this.onPass.bind(this);		
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
@@ -63,6 +71,25 @@ class App extends Component {
 			}
 		  }
 		}
+	  }
+
+	  onPass(Lat,Long) {
+		var that = this;
+			OpenWeatherAPI.getTemp(Lat,Long).then(function (data) {
+		  that.setState({
+			Lat: Lat,
+			Long: Long,
+			Temp: data.main.temp,
+			Name: data.name,
+			Description: data.weather[0].description,
+			Wind: data.wind.speed,
+			Humidity: data.main.humidity,
+			weather: data.weather[0].main
+		  });
+		},
+		function (errorMessage) {
+			alert(errorMessage);
+		});
 	  }
 
 	  saveStateToLocalStorage() {
@@ -133,6 +160,11 @@ class App extends Component {
 					</div>
 
 					<div class="column" align="right">
+						<LatLong onPass = {this.onPass} />
+						<DisplayTemp Temp = {this.state.Temp} Name = {this.state.Name} Description = {this.state.Description}
+							 		Humidity = {this.state.Humidity} Wind = {this.state.Wind} weather = {this.state.weather}/>
+					</div>
+					{/*<div class="column" align="right">
 						<div id="openweathermap-widget-162"></div>
 					</div>
 					<div class="column" align="right">
@@ -140,7 +172,7 @@ class App extends Component {
 					</div>					
 					<div class="column" align="right">
 						<div id="openweathermap-widget-16"></div>
-					</div>
+					</div>*/}
 
 
 				</div>				
@@ -187,7 +219,9 @@ class App extends Component {
 								</form>	
 						</div>
 						<div class="row">
-							<div class="fb-page" data-width="330px" data-height="471px" data-href={"https://www.facebook.com/" + this.state.facebookUser} data-tabs="timeline" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
+							<div class="fb-page" data-width="330px" data-height="471px" data-href={"https://www.facebook.com/" + this.state.facebookUser} data-tabs="timeline" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true">
+							<blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore">
+							<a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
 						</div>
 					</div>
 

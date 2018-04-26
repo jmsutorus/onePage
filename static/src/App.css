@@ -70,17 +70,12 @@ a img{
 
 .grid-container2 {
   display: grid;
-  grid-template-columns:455px 755px 5px 110px 110px 110px;
+  grid-template-columns:455px 755px 20px 300px 5px;
   grid-column-gap: 30px;
   grid-row-gap: 30px;
   margin-left: 99px;
   margin-top:50px;
   margin-bottom:50px;
-}
-
-.left,
-.middle,
-.right {
 }
 
 /* Style the left column */
