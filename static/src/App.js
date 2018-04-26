@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import {Button} from 'reactstrap';
 import Popup from 'reactjs-popup';
 import Post from "./Post.js";
+import ReactDOM from 'react-dom';
+import LatLong from './LatLong.js';
+import DisplayTemp from './weather.js'
+import OpenWeatherAPI from './OpenWeatherAPI.js'
+import Clock from './Clock';
 import './App.css';
 
 class App extends Component {
@@ -11,9 +16,13 @@ class App extends Component {
       facebookUser: "StudentProblems",
 			twitterUser: "reveille",
 			twitterInput: "",
+			Lat:'',
+		  	Long:'',
+		  	Temp:'Loading'
     };
 		this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+	this.handleSubmit = this.handleSubmit.bind(this);
+	this.onPass = this.onPass.bind(this);
   }
 	handleChange(e) {
     this.setState({
@@ -26,25 +35,42 @@ class App extends Component {
       twitterUser: this.state.twitterInput,
     });
   }
+	onPass(Lat,Long) {
+		var that = this;
+	OpenWeatherAPI.getTemp(Lat,Long).then(function (data) {
+		  that.setState({
+			Lat: Lat,
+			Long: Long,
+			Temp: data.main.temp,
+			Name: data.name,
+			Description: data.weather[0].description,
+			Wind: data.wind.speed,
+			Humidity: data.main.humidity
+		  });
+		},
+		function (errorMessage) {
+			alert(errorMessage);
+		});
+	  }
+
 	render() {
 		return (
+			
 			<div>
 				<div class="header">
-					{/*(<iframe src="http://free.timeanddate.com/clock/i6785m90/n2284/th2" frameborder="0" width="114" height="18"></iframe><br/> */}
-					<img src="/img/logo.png" className="logo"/>
-					<img src="/img/theOnePage.png" className="textLogo"/>
-					{/*<div className="social-button-container">
-						<button className="social-button social-button-facebook">
-							Facebook
-						</button>
-						<button className="social-button social-button-twitter">
-							Twitter
-						</button>
-						<button className="social-button social-button-instagram">
-							Instagram
-						</button>
+					<div class="weathercont">
+							<LatLong onPass = {this.onPass} />
+							<DisplayTemp Temp = {this.state.Temp} Name = {this.state.Name} Description = {this.state.Description}
+							 Humidity = {this.state.Humidity} Wind = {this.state.Wind}/>
 					</div>
-					*/}
+					<div class="logocont">
+						<img src="/img/logo.png" className="logo"/>
+						<img src="/img/theOnePage.png" className="textLogo"/>
+					</div>
+					<div class="clockcont">
+						<Clock></Clock>
+					</div>
+					
 				</div>
 
 				<div class="grid-container">

@@ -12,6 +12,7 @@ body {
   font-size: 35px;
   margin-top: 50px;
   margin-bottom: 50px;
+  display: flex;
 }
 
 .header img {
@@ -34,6 +35,28 @@ body {
   height: 75px;
   width: auto;
   margin-right:20px;
+}
+
+.logocont{
+  width: 50%
+}
+
+.weathercont{
+  width: 16%;
+  margin-left: 9%;
+}
+
+.clockcont{
+  width: 18%;
+  margin-right: 7%;
+}
+
+.extra-container {
+  display: grid;
+  grid-template-columns: 500px 250px 500px;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  margin-left: 99px;
 }
 
 /* The grid container */
@@ -155,3 +178,4 @@ div#scroll:hover::-webkit-scrollbar-thumb {
     'footer footer footer footer footer footer';
 }
 }
+
