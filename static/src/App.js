@@ -30,19 +30,17 @@ class App extends Component {
 		return (
 			<div>
 				<div class="header">
-					{/*(<iframe src="http://free.timeanddate.com/clock/i6785m90/n2284/th2" frameborder="0" width="114" height="18"></iframe><br/> */}
-					<img src="/img/logo.png" className="logo"/>
-					<img src="/img/theOnePage.png" className="textLogo"/>
-					{/*<div className="social-button-container">
-						<button className="social-button social-button-facebook">
-							Facebook
-						</button>
-						<button className="social-button social-button-twitter">
-							Twitter
-						</button>
-						<button className="social-button social-button-instagram">
-							Instagram
-						</button>
+					<div class="weathercont">
+							<LatLong onPass = {this.onPass} />
+							<DisplayTemp Temp = {this.state.Temp} Name = {this.state.Name} Description = {this.state.Description}
+							 Humidity = {this.state.Humidity} Wind = {this.state.Wind}/>
+					</div>
+					<div class="logocont">
+						<img src="/img/logo.png" className="logo"/>
+						<img src="/img/theOnePage.png" className="textLogo"/>
+					</div>
+					<div class="clockcont">
+						<Clock></Clock>
 					</div>
 					*/}
 				</div>
