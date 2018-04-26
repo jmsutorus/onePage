@@ -16,9 +16,13 @@ class App extends Component {
       facebookUser: "StudentProblems",
 			twitterUser: "reveille",
 			twitterInput: "",
+			Lat:'',
+		  	Long:'',
+		  	Temp:'Loading'
     };
 		this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+	this.handleSubmit = this.handleSubmit.bind(this);
+	this.onPass = this.onPass.bind(this);
   }
 	handleChange(e) {
     this.setState({
@@ -31,15 +35,6 @@ class App extends Component {
       twitterUser: this.state.twitterInput,
     });
   }
-	constructor(props){
-		super(props);
-		this.state ={
-		  Lat:'',
-		  Long:'',
-		  Temp:'Loading'
-		}
-		this.onPass = this.onPass.bind(this)
-	  };
 	onPass(Lat,Long) {
 		var that = this;
 	OpenWeatherAPI.getTemp(Lat,Long).then(function (data) {
