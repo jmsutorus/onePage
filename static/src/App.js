@@ -2,51 +2,149 @@ import React, { Component } from 'react';
 import {Button} from 'reactstrap';
 import Popup from 'reactjs-popup';
 import Post from "./Post.js";
+import ReactDOM from 'react-dom';
+import DisplayTemp from './weather.js'
+import Clock from './Clock';
 import './App.css';
 
 class App extends Component {
 	constructor(props) {
-    super(props);
-    this.state = {
-      facebookUser: "StudentProblems",
+		super(props);
+		this.state = {
+			facebookUser: "StudentProblems",
 			twitterUser: "reveille",
+			twitterUser2: "cnnbrk",
 			twitterInput: "",
+
     };
+	
+
+	
 		this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
+	
+	componentDidMount() {
+		this.hydrateStateWithLocalStorage();
+
+		// add event listener to save state to localStorage
+		// when user leaves/refreshes the page
+		window.addEventListener(
+		  "beforeunload",
+		  this.saveStateToLocalStorage.bind(this)
+		);
+	  }
+
+	  componentWillUnmount() {
+		window.removeEventListener(
+		  "beforeunload",
+		  this.saveStateToLocalStorage.bind(this)
+		);
+
+		// saves if component has a chance to unmount
+		this.saveStateToLocalStorage();
+	  }
+
+	  hydrateStateWithLocalStorage() {
+		// for all items in state
+		for (let key in this.state) {
+		  // if the key exists in localStorage
+		  if (localStorage.hasOwnProperty(key)) {
+			// get the key's value from localStorage
+			let value = localStorage.getItem(key);
+
+			// parse the localStorage string and setState
+			try {
+			  value = JSON.parse(value);
+			  this.setState({ [key]: value });
+			} catch (e) {
+			  // handle empty string
+			  this.setState({ [key]: value });
+			}
+		  }
+		}
+	  }
+
+	  saveStateToLocalStorage() {
+		// for every item in React state
+		for (let key in this.state) {
+		  // save to localStorage
+		  localStorage.setItem(key, JSON.stringify(this.state[key]));
+		}
+	  }	
+	
+	
+	 updateTitle = (e) => {
+		e.preventDefault(); 
+		const newTitle = this.refs['wordfield'].value;
+		this.setState({ twitterUser: newTitle });
+		localStorage.setItem("twitterUser", JSON.stringify(newTitle));
+		this.refs['wordfield'].value = "";
+	  }
+	  
+	 updateTitle2 = (e) => {
+		e.preventDefault(); 
+		const newTitle2 = this.refs['wordfield2'].value;
+		this.setState({ twitterUser2: newTitle2 });
+		localStorage.setItem("twitterUser2", JSON.stringify(newTitle2));
+		this.refs['wordfield2'].value = "";
+	  }
+	  
+	 updateTitle3 = (e) => {
+		e.preventDefault(); 
+		const newTitle3 = this.refs['wordfield3'].value;
+		this.setState({ facebookUser: newTitle3 });
+		localStorage.setItem("facebookUser", JSON.stringify(newTitle3));
+		this.refs['wordfield3'].value = "";
+	  }
+	
 	handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
     });
   }
+  
   handleSubmit(e) {
     e.preventDefault();
 		this.setState({
       twitterUser: this.state.twitterInput,
     });
   }
+
+  
+  
 	render() {
 		return (
 			<div>
-				<div class="header">
-					{/*(<iframe src="http://free.timeanddate.com/clock/i6785m90/n2284/th2" frameborder="0" width="114" height="18"></iframe><br/> */}
-					<img src="/img/logo.png" className="logo"/>
-					<img src="/img/theOnePage.png" className="textLogo"/>
-					{/*<div className="social-button-container">
-						<button className="social-button social-button-facebook">
-							Facebook
-						</button>
-						<button className="social-button social-button-twitter">
-							Twitter
-						</button>
-						<button className="social-button social-button-instagram">
-							Instagram
-						</button>
+				<div class="grid-container2">
+					<div class="column">
+						<Clock></Clock>
 					</div>
-					*/}
-				</div>
 
+					<div class="column">
+					<center>
+						<img src="/img/logo.png" className="logo"/>
+						<img src="/img/theOnePage.png" className="textLogo"/><br />
+						<h1 class="welcome">Good Morning, Frank Shipman.</h1>
+					</center>
+					</div>
+					
+					<div class="column">
+					</div>
+
+					<div class="column" align="right">
+						<div id="openweathermap-widget-162"></div>
+					</div>
+					<div class="column" align="right">
+						<div id="openweathermap-widget-163"></div>
+					</div>					
+					<div class="column" align="right">
+						<div id="openweathermap-widget-16"></div>
+					</div>
+
+
+				</div>				
+				
 				<div class="grid-container">
 					<div class="column">
 						<div class="circleLinks1">
@@ -81,10 +179,15 @@ class App extends Component {
 
 					<div class="column">
 						<div class="row">
-							<img src="img/fb_banner.png"/>
+							<a href="/"><img src="img/fb_banner.png"/></a>
+							
+							<form onSubmit={this.updateTitle3}>
+									<input ref='wordfield3' type="text4" placeholder="Search Facebook Page"/>
+										{/*<button type="submit" className="login-submit"></button>*/}
+								</form>	
 						</div>
 						<div class="row">
-							<div class="fb-page" data-width="330px" data-height="500px" data-href="https://www.facebook.com/StudentProblems/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
+							<div class="fb-page" data-width="330px" data-height="471px" data-href={"https://www.facebook.com/" + this.state.facebookUser} data-tabs="timeline" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
 						</div>
 					</div>
 
@@ -92,22 +195,21 @@ class App extends Component {
 
 					<div class="column" >
 						<div class="row">
-							<img src="img/twitter_banner.png"/>
+							<a href="/"><img src="img/twitter_banner.png"/></a>
+							
+								<form onSubmit={this.updateTitle}>
+									<input ref='wordfield' type="text2" placeholder="Search Twitter User"/>
+										{/*<button type="submit" className="login-submit"></button>*/}
+								</form>						
+							
+							
+							
 						</div>
 						<div class="row">
-							<a class="twitter-timeline" data-width="350" data-height="500" data-theme="light" href={"https://twitter.com/"+this.state.twitterUser} data-chrome="noheader nofooter noborders"></a>
+							<a class="twitter-timeline" data-width="350" data-height="473" data-theme="light" href={"https://twitter.com/" + this.state.twitterUser} data-chrome="noheader nofooter noborders"></a>
 						</div>
 						<div>
-							<form onSubmit={this.handleSubmit} className="login-form">
-								<input
-				          value={this.state.password}
-				          onChange={this.handleChange}
-				          type="" className="login-input"
-				          placeholder="twitter user" name="twitterInput"
-				        />
-								<button type="submit" className="login-submit">
-				        </button>
-							</form>
+
 						</div>
 					</div>
 
@@ -115,10 +217,15 @@ class App extends Component {
 
 					<div class="column">
 						<div class="row">
-							<img src="img/cnn_banner.png"/>
+							<a href="/"><img src="img/cnn_banner.png"/></a>
+							
+							<form onSubmit={this.updateTitle2}>
+									<input ref='wordfield2' type="text3" placeholder="Search Breaking News"/>
+										{/*<button type="submit" className="login-submit"></button>*/}
+								</form>	
 						</div>
 						<div class="row">
-							<a class="twitter-timeline" data-width="350" data-height="500" data-theme="light" href="https://twitter.com/cnnbrk" data-chrome="noheader nofooter noborders"></a>
+							<a class="twitter-timeline" data-width="350" data-height="473" data-theme="light" href={"https://twitter.com/" + this.state.twitterUser2} data-chrome="noheader nofooter noborders"></a>
 						</div>
 					</div>
 
