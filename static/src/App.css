@@ -12,6 +12,7 @@ body {
   font-size: 35px;
   margin-top: 50px;
   margin-bottom: 50px;
+  display: flex;
 }
 
 .header img {
@@ -177,3 +178,4 @@ div#scroll:hover::-webkit-scrollbar-thumb {
     'footer footer footer footer footer footer';
 }
 }
+

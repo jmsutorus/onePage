@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import {Button} from 'reactstrap';
 import Popup from 'reactjs-popup';
 import Post from "./Post.js";
+import ReactDOM from 'react-dom';
+import LatLong from './LatLong.js';
+import DisplayTemp from './weather.js'
+import OpenWeatherAPI from './OpenWeatherAPI.js'
+import Clock from './Clock';
 import './App.css';
 
 class App extends Component {
@@ -26,8 +31,36 @@ class App extends Component {
       twitterUser: this.state.twitterInput,
     });
   }
+	constructor(props){
+		super(props);
+		this.state ={
+		  Lat:'',
+		  Long:'',
+		  Temp:'Loading'
+		}
+		this.onPass = this.onPass.bind(this)
+	  };
+	onPass(Lat,Long) {
+		var that = this;
+	OpenWeatherAPI.getTemp(Lat,Long).then(function (data) {
+		  that.setState({
+			Lat: Lat,
+			Long: Long,
+			Temp: data.main.temp,
+			Name: data.name,
+			Description: data.weather[0].description,
+			Wind: data.wind.speed,
+			Humidity: data.main.humidity
+		  });
+		},
+		function (errorMessage) {
+			alert(errorMessage);
+		});
+	  }
+
 	render() {
 		return (
+			
 			<div>
 				<div class="header">
 					<div class="weathercont">
@@ -42,7 +75,7 @@ class App extends Component {
 					<div class="clockcont">
 						<Clock></Clock>
 					</div>
-					*/}
+					
 				</div>
 
 				<div class="grid-container">
