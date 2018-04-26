@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Panel = (props) => {
     return (
-        <div className="container">
+        
                     <div className="panel">                        
                         <label id="date-switch" className="switch">
                             <input type="checkbox" checked={props.dateOn} onChange={props.toggleDate}/>
@@ -14,7 +14,7 @@ const Panel = (props) => {
                         </label>
                     </div>
 
-        </div>
+        
     );
 };
 

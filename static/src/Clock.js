@@ -36,7 +36,6 @@ class Clock extends Component {
     render() {
         return (
             <div>
-                <Panel toggleDate={this.toggleDate} dateOn={this.state.isDateVisible} />
                 <Display date={this.state.date} isDateVisible={this.state.isDateVisible} />
             </div>
         );
