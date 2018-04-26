@@ -38,13 +38,17 @@ body {
 }
 
 .logocont{
-  width: 33%
+  width: 50%
 }
 
-.widgetcont{
-  width: 33%;
-  margin-left: 5%;
-  margin-right: 5%;
+.weathercont{
+  width: 16%;
+  margin-left: 9%;
+}
+
+.clockcont{
+  width: 18%;
+  margin-right: 7%;
 }
 
 .extra-container {
@@ -58,7 +62,7 @@ body {
 /* The grid container */
 .grid-container {
   display: grid;
-  grid-template-columns: 600px 0px 250px 5px 250px 5px 250px;
+  grid-template-columns: 600px 0px 300px 5px 300px 5px 300px;
   grid-column-gap: 30px;
   grid-row-gap: 30px;
   margin-left: 99px;

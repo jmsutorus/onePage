@@ -42,7 +42,7 @@ class App extends Component {
 			
 			<div>
 				<div class="header">
-					<div class="widgetcont">
+					<div class="weathercont">
 							<LatLong onPass = {this.onPass} />
 							<DisplayTemp Temp = {this.state.Temp} Name = {this.state.Name} Description = {this.state.Description}
 							 Humidity = {this.state.Humidity} Wind = {this.state.Wind}/>
@@ -51,7 +51,7 @@ class App extends Component {
 						<img src="/img/logo.png" className="logo"/>
 						<img src="/img/theOnePage.png" className="textLogo"/>
 					</div>
-					<div class="widgetcont">
+					<div class="clockcont">
 						<Clock></Clock>
 					</div>
 					
@@ -94,7 +94,7 @@ class App extends Component {
 							<img src="img/fb_banner.png"/>
 						</div>
 						<div class="row">
-							<div class="fb-page" data-width="280px" data-height="500px" data-href="https://www.facebook.com/StudentProblems/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
+							<div class="fb-page" data-width="330px" data-height="500px" data-href="https://www.facebook.com/StudentProblems/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote></div>
 						</div>
 					</div>
 					
@@ -105,7 +105,7 @@ class App extends Component {
 							<img src="img/twitter_banner.png"/>
 						</div>
 						<div class="row">
-							<a class="twitter-timeline" data-width="280" data-height="500" data-theme="light" href="https://twitter.com/reveille" data-chrome="noheader nofooter noborders"></a> 
+							<a class="twitter-timeline" data-width="350" data-height="500" data-theme="light" href="https://twitter.com/reveille" data-chrome="noheader nofooter noborders"></a> 
 						</div>
 					</div>
 					
@@ -116,7 +116,7 @@ class App extends Component {
 							<img src="img/cnn_banner.png"/>
 						</div>
 						<div class="row">
-							<a class="twitter-timeline" data-width="300" data-height="500" data-theme="light" href="https://twitter.com/cnnbrk" data-chrome="noheader nofooter noborders"></a> 
+							<a class="twitter-timeline" data-width="350" data-height="500" data-theme="light" href="https://twitter.com/cnnbrk" data-chrome="noheader nofooter noborders"></a> 
 						</div>
 					</div>
 					
